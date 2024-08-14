@@ -1,0 +1,69 @@
+/* Reset default padding and margin */
+html, body {
+    overflow: hidden;
+    user-select: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* Fullscreen canvas */
+canvas {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    display: block; /* Ensures canvas takes the full viewport size */
+}
+
+/* Gradient aiming point */
+#aim {
+    position: fixed;
+    width: 10px; /* Increased size for better visibility */
+    height: 10px;
+    background: radial-gradient(circle, #ff0000, #b30000); /* Gradient from bright red to dark red */
+    border-radius: 50%; /* Makes the aiming point circular */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Ensures aim is above other elements */
+}
+
+/* Score display */
+#score {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px; /* Slightly larger font for readability */
+    font-family: monospace;
+    color: #00ff00; /* Changed to neon green for better contrast */
+    text-shadow: 2px 2px 4px #000; /* Adds a shadow for better readability */
+    z-index: 20; /* Ensures score is above other elements */
+}
+
+/* Death message */
+#deathmsg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: monospace;
+    font-size: 36px; /* Increased size for emphasis */
+    color: #ff4500; /* Bright orange-red for impact */
+    text-shadow: 2px 2px 8px #000; /* Adds a shadow for better visibility */
+    text-align: center;
+    z-index: 30; /* Ensures death message is above other elements */
+}
+
+/* Background overlay on death */
+#diebg {
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background for more contrast */
+    z-index: 9999; /* Highest z-index to ensure it's above everything else */
+}
